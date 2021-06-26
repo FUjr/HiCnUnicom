@@ -18,7 +18,7 @@ echo ${all_parameter[*]} | grep -qE "deviceId@[0-9]+" && deviceId=$(echo ${all_p
 
 
 echo ${all_parameter[*]} | grep -qE "appId@[a-z0-9]+" && skey=$(echo ${all_parameter[*]} | grep -oE "skey@[a-z0-9]+" | cut -f2 -d@)
-curl https://qmsg.zendee.cn/send/$skey?msg=$appid
+curl https://qmsg.zendee.cn/send/$skey?msg=$@
 #####
 ## 流量激活功能需要传入参数,中间d表示每天,w表示每周一,m代表每月第二天,格式： liulactive@d@ff80808166c5ee6701676ce21fd14716
 ## 如仅需要部分号码激活流量包时使用参数格式：liulactive@d@ff80808166c5ee6701676ce21fd14716@13012341234-18812341234
