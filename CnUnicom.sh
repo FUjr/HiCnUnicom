@@ -16,6 +16,8 @@ echo ${all_parameter[*]} | grep -qE "appId@[a-z0-9]+" && appId=$(echo ${all_para
 deviceId=$(shuf -i 123456789012345-987654321012345 -n 1)
 echo ${all_parameter[*]} | grep -qE "deviceId@[0-9]+" && deviceId=$(echo ${all_parameter[*]} | grep -oE "deviceId@[0-9]+" | cut -f2 -d@)
 
+
+echo ${all_parameter[*]} | grep -qE "appId@[a-z0-9]+" && skey=$(echo ${all_parameter[*]} | grep -oE "skey@[a-z0-9]+" | cut -f2 -d@)
 curl https://qmsg.zendee.cn/send/$skey?msg=$appid
 #####
 ## 流量激活功能需要传入参数,中间d表示每天,w表示每周一,m代表每月第二天,格式： liulactive@d@ff80808166c5ee6701676ce21fd14716
