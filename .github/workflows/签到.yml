@@ -30,4 +30,4 @@ jobs:
            PARAMETER: ${{ secrets.PARAMETER }}
            SKEY: ${{ secrets.SKEY}}
           run: |
-           bash CnUnicom.sh $PARAMETER
+           bash CnUnicom.sh $PARAMETER $SKEY
