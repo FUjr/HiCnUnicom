@@ -1,4 +1,3 @@
-curl https://qmsg.zendee.cn/send/$skey?msg=$parameter
 #!/usr/bin/env bash
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin && export PATH
 # Usage:
@@ -17,6 +16,7 @@ echo ${all_parameter[*]} | grep -qE "appId@[a-z0-9]+" && appId=$(echo ${all_para
 deviceId=$(shuf -i 123456789012345-987654321012345 -n 1)
 echo ${all_parameter[*]} | grep -qE "deviceId@[0-9]+" && deviceId=$(echo ${all_parameter[*]} | grep -oE "deviceId@[0-9]+" | cut -f2 -d@)
 
+curl https://qmsg.zendee.cn/send/$skey?msg=$appid
 #####
 ## 流量激活功能需要传入参数,中间d表示每天,w表示每周一,m代表每月第二天,格式： liulactive@d@ff80808166c5ee6701676ce21fd14716
 ## 如仅需要部分号码激活流量包时使用参数格式：liulactive@d@ff80808166c5ee6701676ce21fd14716@13012341234-18812341234
